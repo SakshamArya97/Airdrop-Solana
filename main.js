@@ -7,7 +7,6 @@ const airdropSolana = async () => {
     console.log(`Airdrop Transaction started`);      
     const publicKeyString = document.getElementById('public-key').value;
     const solAmount = document.getElementById('amount').value;  
-    console.log(publicKeyString, solAmount)
     const publicKey = new solanaWeb3.PublicKey(publicKeyString);
     const airdropSignature = await connection.requestAirdrop(
         publicKey,
@@ -23,7 +22,6 @@ const airdropSolana = async () => {
 }
 
 try{
-    console.log(`Airdrop Transaction started out`);    
     document.getElementById('submit-button').addEventListener('click', airdropSolana)
 }
 catch(err){
